@@ -325,7 +325,7 @@ async function fetchByCategory({ categoryId }) {
 
   //
 
-  const listTasks = divided[4].map((item) =>
+  const listTasks = divided[3].map((item) =>
     limit(async () => {
       const cat = await ProductCategories.findOne({
         cId: String(item.cId),
@@ -496,7 +496,6 @@ async function fetchByCategory({ categoryId }) {
               newSkus.push(item);
               continue;
             }
-            item.sale_price_with_tax = 1000;
             // 문제 지점 전후로 세분화 try-catch
             let incomingSale;
             try {
